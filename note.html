@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerencie gastos - Anotações</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <button>
+      <img src="assets/images/menu-burguer.svg" alt="icone menu">
+    </button>
+    <nav>
+     <ul class="ul-nav">
+       <li>
+        <a href="index.html">
+          Geral
+        </a>          
+       </li>
+       <li>
+        <a href="gastos.html">
+          Gastos
+        </a>
+       </li>
+       <li>
+        <a href="note.html">
+          Anotações
+        </a>
+       </li>
+     </ul>
+    </nav>
+    <h1 class="title">
+      Anotações
+    </h1>
+  </header>
+  <section>
+    <h2>
+      <button>
+        Adicionar <img src="assets/images/add-icon.svg" alt="icone de adição">
+      </button>
+    </h2>
+    <div class="note-wrapper">
+      <div class="note">
+        <div>
+          <h3>
+            Titulo
+          </h3>
+          <button>
+            <img src="assets/images/delete.svg" alt="Deletar">
+          </button>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempora doloremque totam doloribus hic cumque. Sunt iure molestiae illo fugit similique voluptatum corporis tempora vitae? Rem delectus eveniet ad similique!
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="modal-note">
+    <form id="note">
+      <label for="title">Titulo</label>
+      <input type="text" id="title" name="title">
+      <label for="text">Descrição</label>
+      <textarea name="text" id="text" ></textarea>
+      <input type="button" value="Adicionar">
+    </form>
+  </div>
+  <script src="/assets/js/script.js" type="module"></script>
+</body>
+</html>

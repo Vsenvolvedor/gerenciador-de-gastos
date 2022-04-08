@@ -36,3 +36,71 @@ img{
   display: block;
   max-width: 100%;
 }
+
+button{
+  cursor: pointer;
+}
+
+/* Header configuração geral */
+
+header{
+  display: flex;
+  padding: 3rem 6rem;
+  align-items: center;
+  position: relative;
+}
+
+header > h1{
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+.ul-nav{
+  background-color: var(--cor01);
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 6rem;
+  position: absolute;
+  left: 0;
+  transform: translate3d(-100%,0,0);
+  transition: transform .4s;
+}
+
+.ul-nav.active{
+  transform: translate3d(0%,0,0);
+}
+
+.ul-nav li{
+  font-size: 1.8rem;
+  padding: 1rem .5rem;
+  text-transform: uppercase;
+}
+
+.ul-nav a{
+  font-weight: bold;
+  border-bottom: 2px solid var(--cor02);
+  transition: .2s;
+}
+
+.ul-nav a:hover{
+  border-color: var(--cor03);
+}
+
+.header-menu{
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.close-menu{
+  width: 40px;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}

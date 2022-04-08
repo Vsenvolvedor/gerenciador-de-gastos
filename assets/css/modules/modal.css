@@ -25,7 +25,7 @@
 #modal
 {
   background-color: var(--cor05);
-  box-shadow: 0 0 0 12px var(--cor02);
+  box-shadow: 0 0 0 12px var(--cor04);
   border-radius: 6px;
   padding: 1.5rem 3rem;
   position: relative;
@@ -72,7 +72,7 @@
 
 .modal-close{
   background-color: var(--cor05);
-  box-shadow: 0 0 0 6px var(--cor02);
+  box-shadow: 0 0 0 6px var(--cor04);
   border-radius: 50%;
   padding: 1rem;
   position: absolute;

@@ -1,5 +1,4 @@
 #notes{
-  background-color: var(--cor01);
   padding: 1.5rem 3rem;
   margin: 3rem 6rem;
   border-radius: 6px;
@@ -33,7 +32,8 @@
 
 .note{
   background-color: var(--cor05);
-  border-radius: 6px;
+  border: 4px solid var(--cor04);
+  border-radius: 16px 16px 12px 12px; 
   max-width: 350px;
 }
 

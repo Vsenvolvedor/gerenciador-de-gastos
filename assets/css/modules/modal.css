@@ -1,10 +1,14 @@
-/* Modal anotações */
+/* Modal*/
 
-.modal-note{
+.modal-note,
+.modal-g
+{
   display: none;
 }
 
-.modal-note.active{
+.modal-note.active,
+.modal-g.active
+{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +21,9 @@
   z-index: 1;
 }
 
-#note{
+#note,
+#modal
+{
   background-color: var(--cor05);
   box-shadow: 0 0 0 12px var(--cor02);
   border-radius: 6px;
@@ -25,13 +31,16 @@
   position: relative;
 }
 
-#note label{
+#note label,
+#modal label
+{
   display: block;
   font-size: 2.4rem;
   margin-bottom: .5rem;
 }
 
 #note input,
+#modal input,
 #note textarea{
   font-size: 1.8rem;
   background-color: var(--cor06);
@@ -46,11 +55,19 @@
   height: 200px;
 }
 
-#note input[type="button"]{
+#note input[type="button"],
+#modal input[type="button"]{
   background-color: var(--cor01);
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.158);
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  transition: .4s;
+}
+
+#note input[type="button"]:hover,
+#modal input[type="button"]:hover{
+  background-color: var(--cor02);
 }
 
 .modal-close{

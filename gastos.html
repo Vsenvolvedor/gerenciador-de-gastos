@@ -39,29 +39,30 @@
     <h1 class="title">
       Gerenciador
     </h1>
-    <div class="info-wrapper">
-      <div class="info-g">
-        <h2>Renda Mensal</h2>
-        <p>R$<span>21321</span></p>
-      </div>
-      <div class="info-g">
-        <h2>Despesas</h2>
-        <p>R$<span>21321</span></p>
-      </div>
-      <div class="info-g">
-        <h2>Restante</h2>
-        <p>R$<span>21321</span></p>
-      </div>
-    </div>
-    <div class="btns-info">
-      <button>
-        Adicionar
-      </button>
-      <button>
-        Imprimir tabela
-      </button>
-    </div>
+   
   </header>
+  <div class="info-wrapper">
+    <div class="info-g">
+      <h2>Renda Mensal</h2>
+      <p>R$<span>21321</span></p>
+    </div>
+    <div class="info-g">
+      <h2>Despesas</h2>
+      <p>R$<span>21321</span></p>
+    </div>
+    <div class="info-g">
+      <h2>Restante</h2>
+      <p>R$<span>21321</span></p>
+    </div>
+  </div>
+  <div class="btns-info">
+    <button>
+      Adicionar 
+    </button>
+    <button>
+      Imprimir tabela
+    </button>
+  </div>
   <section class="g-wrapper">
     <div class="note">
       <div>
@@ -95,11 +96,15 @@
         <li>Pago? Sim/Nao </li>
       </ul>
     </div>
+    
  
 
   </section>
-  <div class="modal-g">
-    <form>
+  <div class="modal-g active">
+    <form id="modal">
+      <button class="modal-close">
+        <img src="assets/images/close.svg" alt="fechar">
+      </button>
       <label for="name">Nome:</label>
       <input type="text" id="name" name="name">
       <div>

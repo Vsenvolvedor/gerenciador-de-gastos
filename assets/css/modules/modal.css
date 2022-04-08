@@ -1,0 +1,67 @@
+/* Modal anotações */
+
+.modal-note{
+  display: none;
+}
+
+.modal-note.active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.219);
+  z-index: 1;
+}
+
+#note{
+  background-color: var(--cor05);
+  box-shadow: 0 0 0 12px var(--cor02);
+  border-radius: 6px;
+  padding: 1.5rem 3rem;
+  position: relative;
+}
+
+#note label{
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: .5rem;
+}
+
+#note input,
+#note textarea{
+  font-size: 1.8rem;
+  background-color: var(--cor06);
+  width: 100%;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+#note textarea{
+  height: 200px;
+}
+
+#note input[type="button"]{
+  background-color: var(--cor01);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.modal-close{
+  background-color: var(--cor05);
+  box-shadow: 0 0 0 6px var(--cor02);
+  border-radius: 50%;
+  padding: 1rem;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 2;
+}
+
+/* Modal gerenciador */

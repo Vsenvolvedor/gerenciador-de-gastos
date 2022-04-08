@@ -1,0 +1,46 @@
+#notes{
+  background-color: var(--cor01);
+  padding: 1.5rem 3rem;
+  margin: 3rem 6rem;
+  border-radius: 6px;
+}
+
+#add-note{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.note-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.note{
+  background-color: var(--cor05);
+  border-radius: 6px;
+  max-width: 350px;
+}
+
+.note > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor04);
+  border-radius: 6px 6px 0 0;
+  padding:1.5rem;
+}
+
+.note > div h3{
+  font-size: 1.8rem;
+  color: var(--cor05);
+}
+
+.note p{
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+}

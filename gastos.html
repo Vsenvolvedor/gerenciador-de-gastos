@@ -21,7 +21,7 @@
        </li>
        <li>
         <a href="gastos.html">
-          Gastos
+          Gerenciador
         </a>
        </li>
        <li>
@@ -32,69 +32,98 @@
      </ul>
     </nav>
     <h1 class="title">
-      informações gerais
+      Gerenciador
     </h1>
+    <div class="info-wrapper">
+      <div class="info-g">
+        <h2>Renda Mensal</h2>
+        <p>R$<span>21321</span></p>
+      </div>
+      <div class="info-g">
+        <h2>Despesas</h2>
+        <p>R$<span>21321</span></p>
+      </div>
+      <div class="info-g">
+        <h2>Restante</h2>
+        <p>R$<span>21321</span></p>
+      </div>
+    </div>
+    <div class="btns-info">
+      <button>
+        Adicionar
+      </button>
+      <button>
+        Imprimir tabela
+      </button>
+    </div>
   </header>
-  <section>
-    <div>
-      <h2>Rendimento Mensal(uso)</h2>
-      <div class="graphic">
-        GRAFICO
+  <section class="g-wrapper">
+    <div class="note">
+      <div>
+        <h3>
+          Titulo
+        </h3>
+        <button>
+          <img src="assets/images/delete.svg" alt="Deletar">
+        </button>
       </div>
-      <div class="info">
-        <ul>
-          <li>
-            <span>%%</span> Usado
-          </li>
-          <li>
-            Ainda falta: <span>1231</span>
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>Valor: R$<span>12</span> </li>
+        <li>Tipo: <span>Fixo</span></li>
+        <li>Categoria: <span>Moradia</span> </li>
+        <li>Pago? Sim/Nao </li>
+      </ul>
     </div>
-    <div>
-      <h2>Despesas por categoria</h2>
-      <div class="graphic">
-        GRAFICO
+    <div class="note">
+      <div>
+        <h3>
+          Titulo
+        </h3>
+        <button>
+          <img src="assets/images/delete.svg" alt="Deletar">
+        </button>
       </div>
-      <div class="info">
-        <ul>
-          <li>
-            Geral:  R$<span>3134</span>
-          </li>
-          <li>
-            Geral:  R$<span>3134</span>
-          </li>
-          <li>
-            Geral:  R$<span>3134</span>
-          </li>
-          <li>
-            Geral:  R$<span>3134</span>
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>Valor: R$<span>12</span> </li>
+        <li>Tipo: <span>Fixo</span></li>
+        <li>Categoria: <span>Moradia</span> </li>
+        <li>Pago? Sim/Nao </li>
+      </ul>
     </div>
-    <div>
-      <div class="info">
-        <ul>
-          <li>
-            Renda Mensal:  R$<span>3134</span>
-          </li>
-          <li>
-            Despesas:  R$<span>3134</span>
-          </li>
-          <li>
-            Sobra:  R$<span>3134</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="notes">
-      <p>Sem anotações</p>
-    </div>
+ 
 
   </section>
+  <div class="modal-g">
+    <form>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name">
+      <div>
+        <label for="price">Valor:</label>
+        <span>R$<input type="number" name="price" id="price"></span>
+        <label>Tipo</label>
+        <label for="fix">Fixo</label>
+        <input type="radio" name="type" id="fix">
+        <label for="var">Variavel</label>
+        <input type="radio" name="type" id="var">
 
+      </div>
+      <div>
+        <label for="categ">Categoria</label>
+        <select name="categ" id="categ">
+          <option value="">1</option>
+          <option value="">1</option>
+          <option value="">1</option>
+          <option value="">1</option>
+        </select>
+        <label for="check">Pago?</label>
+        <label for="ye">Sim</label>
+        <input type="radio" name="check" id="ye">
+        <label for="no">Não</label>
+        <input type="radio" name="check" id="no">
+      </div>
+      <input type="button" value="Adicionar">
+    </form>
+  </div>
 
   <script src="/assets/js/script.js" type="module"></script>
 </body>

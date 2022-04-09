@@ -56,7 +56,7 @@
     </div>
   </div>
   <div class="btns-info">
-    <button>
+    <button class="add-btn">
       Adicionar 
     </button>
     <button>
@@ -101,57 +101,58 @@
 
   </section>
   <div class="modal-g">
-    <form id="modal">
+    <div class="modal">
       <button class="modal-close">
         <img src="assets/images/close.svg" alt="fechar">
       </button>
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name">
-      <div class="modal-flex">
-        <div>
-          <label for="price">Valor:</label>
-          <span>R$<input type="number" name="price" id="price"></span>
-        </div>
-        <div>
-          <label>Tipo:</label>
-          <div class="modal-flex">
-            <div>
-              <label for="fix" class="click-item" >Fixo</label>
-              <input type="radio" name="type" id="fix">
-            </div>
-            <div>
-              <label for="var" class="click-item">Variavel</label>
-              <input type="radio" name="type" id="var">
+      <form id="modal">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name">
+        <div class="modal-flex">
+          <div>
+            <label for="price">Valor:</label>
+            <span>R$<input type="number" name="price" id="price"></span>
+          </div>
+          <div>
+            <label>Tipo:</label>
+            <div class="modal-flex">
+              <div>
+                <label for="fix" class="click-item" >Fixo</label>
+                <input type="radio" name="type" id="fix">
+              </div>
+              <div>
+                <label for="var" class="click-item">Variavel</label>
+                <input type="radio" name="type" id="var">
+              </div>
             </div>
           </div>
         </div>
-
-      </div>
-      <div class="modal-flex">
         <div class="modal-flex">
-          <label for="categ">Categoria:</label>
-          <select name="categ" id="categ">
-            <option value="">1</option>
-            <option value="">1</option>
-            <option value="">1</option>
-            <option value="">1</option>
-          </select>
-        </div>
-        <div class="modal-flex">
-          <label for="check">Pago?</label>
+          <div class="modal-flex">
+            <label for="categ">Categoria:</label>
+            <select name="categ" id="categ">
+              <option value="">1</option>
+              <option value="">1</option>
+              <option value="">1</option>
+              <option value="">1</option>
+            </select>
+          </div>
+          <div class="modal-flex">
+            <label for="check">Pago?</label>
       
-          <div class="modal-flex">
-            <label for="ye" class="click-item">Sim</label>
-            <input type="radio" name="check" id="ye">
-          
-            <label for="no" class="click-item red">Não</label>
-            <input type="radio" name="check" id="no">
+            <div class="modal-flex">
+              <label for="ye" class="click-item">Sim</label>
+              <input type="radio" name="check" id="ye">
+      
+              <label for="no" class="click-item red">Não</label>
+              <input type="radio" name="check" id="no">
+            </div>
+      
           </div>
-         
         </div>
-      </div>
-      <input type="button" value="Adicionar">
-    </form>
+        <input type="button" value="Adicionar">
+      </form>
+    </div>
   </div>
   <script src="/assets/js/script.js" type="module"></script>
 </body>

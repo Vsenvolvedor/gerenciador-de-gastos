@@ -1,5 +1,9 @@
 /* Modal*/
 
+.modal{
+  position: relative;
+}
+
 .modal-note,
 .modal-g
 {
@@ -29,6 +33,7 @@
   border-radius: 6px;
   padding: 1.5rem 3rem;
   position: relative;
+  max-width: 700px;
 }
 
 #note label,
@@ -63,6 +68,7 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: .4s;
+  margin-top: 3rem;
 }
 
 #note input[type="button"]:hover,
@@ -106,6 +112,10 @@
   cursor: pointer;
   width: fit-content;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.082);
+}
+
+.click-item:hover{
+  transform: scale(1.05);
 }
 
 .click-item.active{

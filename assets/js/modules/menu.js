@@ -1,3 +1,5 @@
+import outsideClick from "./outside-click.js"
+
 export default class Menu{
   constructor(btn,menu,closeMenu,activeClass){
     this.btn = document.querySelector(btn)
@@ -17,6 +19,7 @@ export default class Menu{
   }
   init(){
     this.addEvent()
+    outsideClick(this.btn,this.menu,this.activeClass)
     return this
   }
 }

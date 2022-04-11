@@ -4,7 +4,7 @@ class Manager {
   constructor(wrapper,form){
     this.wrapper = document.querySelector(wrapper)
     this.form = document.querySelector(form)
-    this.inputs = [...this.form].filter((item) => item.id === 'text' || item.id === 'title')
+    this.inputs = [...this.form].filter((item) => !(item.id === 'btn'))
     this.btn = [...this.form].filter((item) => item.id === 'btn')[0]
     this.addElement = this.addElement.bind(this)
   }
@@ -37,6 +37,7 @@ class Manager {
     target.parentElement.parentElement.parentElement.remove();
   }
   addElement(){
+
     const element = this.createElement();
     this.wrapper.innerHTML += element;
     modal2.toggleMenu()

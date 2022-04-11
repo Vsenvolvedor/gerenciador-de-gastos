@@ -35,7 +35,7 @@ class Notes {
     target.parentElement.parentElement.parentElement.remove()
   }
   addElement(){
-    const [input1,input2] = this.inputs.map((input) => {return !(input.value === '')});
+    const [input1,input2] = this.inputs.map((input) => !(input.value === ''));
     if(input1 && input2){
       const element = this.createElement();
       this.wrapper.innerHTML += element;

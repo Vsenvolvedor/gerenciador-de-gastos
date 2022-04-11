@@ -1,7 +1,7 @@
-import modal from "../script.js"
+import {modal} from "../script.js"
 
-export default class Notes {
-  constructor(wrapper,form){
+class Notes {
+  constructor(wrapper,form) {
     this.wrapper = document.querySelector(wrapper)
     this.form = document.querySelector(form)
     this.inputs = [...this.form].filter((item) => item.id === 'text' || item.id === 'title')
@@ -67,3 +67,5 @@ export default class Notes {
     return this
   }
 }
+
+const notes = new Notes('.note-wrapper','#note').init()

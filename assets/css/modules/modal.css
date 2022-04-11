@@ -5,6 +5,10 @@
   max-width: 500px;
 }
 
+.modal-g .modal {
+  max-width: 600px;
+}
+
 .modal-note,
 .modal-g
 {

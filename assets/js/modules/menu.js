@@ -12,7 +12,9 @@ export default class Menu{
   }
   toggleMenu(){
     this.menu.classList.toggle('active')
-    if(this.child){outsideClick(this.btn,this.menu.firstElementChild,this.activeClass)}
+    if(this.child){
+      document.querySelector('body').style.overflowY = 'hidden'
+      outsideClick(this.btn,this.menu.firstElementChild,this.activeClass)}
     else{outsideClick(this.btn,this.menu,this.activeClass)}
   }
 

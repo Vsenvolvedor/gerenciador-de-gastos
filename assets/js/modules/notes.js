@@ -40,6 +40,7 @@ class Notes {
       const element = this.createElement();
       this.wrapper.innerHTML += element;
       modal.toggleMenu()
+      document.querySelector('body').style.overflowY = 'auto'
       this.deletEvent()
       this.inputs.forEach((input) => {
         input.value = ''    

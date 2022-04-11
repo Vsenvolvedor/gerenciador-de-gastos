@@ -69,7 +69,7 @@
         <h3>
           Titulo
         </h3>
-        <button>
+        <button class="delet-note">
           <img src="assets/images/delete.svg" alt="Deletar">
         </button>
       </div>
@@ -80,25 +80,7 @@
         <li>Pago? Sim/Nao </li>
       </ul>
     </div>
-    <div class="note">
-      <div>
-        <h3>
-          Titulo
-        </h3>
-        <button>
-          <img src="assets/images/delete.svg" alt="Deletar">
-        </button>
-      </div>
-      <ul>
-        <li>Valor: R$<span>12</span> </li>
-        <li>Tipo: <span>Fixo</span></li>
-        <li>Categoria: <span>Moradia</span> </li>
-        <li>Pago? Sim/Nao </li>
-      </ul>
-    </div>
-    
  
-
   </section>
   <div class="modal-g">
     <div class="modal">
@@ -118,11 +100,11 @@
             <div class="modal-flex">
               <div>
                 <label for="fix" class="click-item" >Fixo</label>
-                <input type="radio" name="type" id="fix">
+                <input type="radio" name="type" id="fixo">
               </div>
               <div>
                 <label for="var" class="click-item">Variavel</label>
-                <input type="radio" name="type" id="var">
+                <input type="radio" name="type" id="variavel">
               </div>
             </div>
           </div>
@@ -131,10 +113,11 @@
           <div class="modal-flex">
             <label for="categ">Categoria:</label>
             <select name="categ" id="categ">
-              <option value="">1</option>
-              <option value="">1</option>
-              <option value="">1</option>
-              <option value="">1</option>
+              <option value="moradia">moradia</option>
+              <option value="transporte">transporte</option>
+              <option value="alimentação">alimentação</option>
+              <option value="entreterimento">entreterimento</option>
+              <option value="outros">outros</option>
             </select>
           </div>
           <div class="modal-flex">
@@ -150,7 +133,7 @@
       
           </div>
         </div>
-        <input type="button" value="Adicionar">
+        <input type="button" id="btn" value="Adicionar">
       </form>
     </div>
   </div>

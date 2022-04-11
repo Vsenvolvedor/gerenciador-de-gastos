@@ -6,7 +6,7 @@
 }
 
 .modal-g .modal {
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .modal-note,
@@ -101,11 +101,12 @@
 
 .modal-flex{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 3rem;
 }
 
-#fix,#var,#ye,#no{
+#fixo,#variavel,#ye,#no{
   position: absolute;
   top: 0;
   left: 0;
@@ -142,5 +143,5 @@
   border-radius: 6px;
   padding: .5rem;
   margin-bottom: 1rem;
-  width: 120px;
+  width: 140px;
 }

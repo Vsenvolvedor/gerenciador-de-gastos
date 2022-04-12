@@ -77,7 +77,6 @@
         <li>Valor: R$<span>12</span> </li>
         <li>Tipo: <span>Fixo</span></li>
         <li>Categoria: <span>Moradia</span> </li>
-        <li>Pago? Sim/Nao </li>
       </ul>
     </div>
  
@@ -99,12 +98,12 @@
             <label>Tipo:</label>
             <div class="modal-flex">
               <div>
-                <label for="fixo" class="click-item" >Fixo</label>
-                <input type="radio" name="type" id="fixo">
+                <label for="fixo" class="click-item type" >Fixo</label>
+                <input type="radio" name="type" id="fixo" value="0">
               </div>
               <div>
-                <label for="variavel" class="click-item">Variavel</label>
-                <input type="radio" name="type" id="variavel">
+                <label for="variavel" class="click-item type">Variavel</label>
+                <input type="radio" name="type" id="variavel" value="0">
               </div>
             </div>
           </div>
@@ -120,20 +119,9 @@
               <option value="outros">outros</option>
             </select>
           </div>
-          <div class="modal-flex">
-            <label for="check">Pago?</label>
-      
-            <div class="modal-flex">
-              <label for="ye" class="click-item">Sim</label>
-              <input type="radio" name="check" id="ye">
-      
-              <label for="no" class="click-item red">Não</label>
-              <input type="radio" name="check" id="no">
-            </div>
-      
-          </div>
+
         </div>
-        <input type="button" id="btn" value="Adicionar">
+        <input type="button" name="btn" id="btn" value="Adicionar">
       </form>
     </div>
   </div>

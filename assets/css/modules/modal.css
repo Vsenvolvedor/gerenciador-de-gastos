@@ -106,7 +106,7 @@
   gap: 3rem;
 }
 
-#fixo,#variavel,#ye,#no{
+#fixo,#variavel{
   position: absolute;
   top: 0;
   left: 0;

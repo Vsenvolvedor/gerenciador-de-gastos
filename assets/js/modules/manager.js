@@ -1,6 +1,5 @@
-import {modal, modal2} from "../script.js"
+import {modal2} from "../script.js"
 import attValues from "./attValues.js"
-
 let despesas = null
 
 function manager() {
@@ -90,8 +89,7 @@ function manager() {
         item.style.border = ''
         item.name === 'type' ? item.labels[0].classList.remove(activeClass) : ''
       })
-      console.log(despesas)
-
+      attValues(despesas)
     } else {
       form.forEach((input) => {
         input.value === '' ? input.style.border = '2px solid #D25555':''
@@ -108,5 +106,4 @@ function manager() {
 
 manager()
 
-export default despesas;
 

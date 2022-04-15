@@ -5,9 +5,11 @@ export default function attValues(despesas){
     desp = document.querySelector('#desp'),
     rest = document.querySelector('#rest')
   
-  console.log(despesas)
-  desp.innerText = despesas
-  rest.innerText = renda.value - despesas
+  if(despesas){
+    desp.innerText = despesas
+    rest.innerText = renda.value - despesas
+  }
+
 }
 
 

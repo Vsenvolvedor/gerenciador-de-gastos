@@ -6,6 +6,7 @@ function manager() {
     wrapper = document.querySelector('.g-wrapper'),
     form = [...document.querySelector('#modal')],
     itemType = document.querySelectorAll('.type'),
+    activeClass = 'active',
     formObj = {}
     form.forEach((item) => {
       formObj[item.name] = item
@@ -13,9 +14,9 @@ function manager() {
 
   
   function checkItem({target},items){
-    items.forEach((item) => item.classList.remove('active'))
+    items.forEach((item) => item.classList.remove(activeClass))
     if(target){
-      target.classList.add('active')
+      target.classList.add(activeClass)
       formObj.type = target.htmlFor
     }
   
@@ -54,18 +55,21 @@ function manager() {
   function validateInputs(){
     let checkName = false
     const valid = form.filter(item => item.name !== 'btn').map((item) => {
-      if(item.name === 'type' && !checkName){
+      if(item.name === 'type' && item.labels[0].classList.contains(activeClass)){
+        
         checkName = true
         return true    
       }
-      else if(!item.value){
-        return !!(item.value)
+      else if(checkName && !item.labels[0].classList.contains(activeClass)){return true}
+      else if(item.value && item.name !== 'type'){
+        return true
       }
       else{
-        item.remove()
+        return false
       }
     })
-    
+    if(checkName) valid[2] = true
+
     return valid.every(item => !!item)
   }
 
@@ -77,10 +81,15 @@ function manager() {
       addDeletEvent()
       modal2.toggleMenu()
       document.querySelector('body').style.overflowY = 'auto'
-    
-      
+      form.filter(item => item.name !== 'btn').forEach((item) => {
+        item.value = ''
+        item.style.border = ''
+        item.name === 'type' ? item.labels[0].classList.remove(activeClass) : ''
+      })
     } else {
-    console.log(validate)
+      form.forEach((input) => {
+        input.value === '' ? input.style.border = '2px solid #D25555':''
+      })
       
     }
   }

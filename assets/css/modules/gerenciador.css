@@ -69,3 +69,9 @@
 .g-wrapper .note li{
   margin-bottom: 1rem;
 }
+
+#rmen{
+  font-size: 1.6rem;
+  width: 100px;
+  margin-left: .5rem;
+}

@@ -1,4 +1,7 @@
 import {modal, modal2} from "../script.js"
+import attValues from "./attValues.js"
+
+let despesas = null
 
 function manager() {
   
@@ -11,8 +14,8 @@ function manager() {
     form.forEach((item) => {
       formObj[item.name] = item
     })
-
   
+
   function checkItem({target},items){
     items.forEach((item) => item.classList.remove(activeClass))
     if(target){
@@ -82,10 +85,13 @@ function manager() {
       modal2.toggleMenu()
       document.querySelector('body').style.overflowY = 'auto'
       form.filter(item => item.name !== 'btn').forEach((item) => {
+        item.name === 'price' ? despesas += +item.value :''
         item.value = ''
         item.style.border = ''
         item.name === 'type' ? item.labels[0].classList.remove(activeClass) : ''
       })
+      console.log(despesas)
+
     } else {
       form.forEach((input) => {
         input.value === '' ? input.style.border = '2px solid #D25555':''
@@ -94,9 +100,13 @@ function manager() {
     }
   }
 
+
   formObj.btn.addEventListener('click',addElement)
   itemType.forEach(item => item.addEventListener('click', (event) => {checkItem(event,itemType)}))
   
 }
 
 manager()
+
+export default despesas;
+

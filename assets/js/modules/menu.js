@@ -10,17 +10,18 @@ export default class Menu{
 
     this.toggleMenu = this.toggleMenu.bind(this)
   }
-  toggleMenu(){
+  toggleMenu(event, type = false){
     this.menu.classList.toggle('active')
     if(this.child){
-      document.querySelector('body').style.overflowY = 'hidden'
-      outsideClick(this.btn,this.menu.firstElementChild,this.activeClass)}
+      document.querySelector('body').style.overflowY = type || 'hidden'
+      outsideClick(this.btn,this.menu.firstElementChild,this.activeClass)
+    }
     else{outsideClick(this.btn,this.menu,this.activeClass)}
   }
 
   addEvent(){
     this.btn.addEventListener('click',this.toggleMenu)
-    this.closeMenu.forEach(item => item.addEventListener('click',this.toggleMenu))
+    this.closeMenu.forEach(item => item.addEventListener('click',(event) => this.toggleMenu(event,'auto')))
   }
   init(){
     if(this.btn && this.menu){

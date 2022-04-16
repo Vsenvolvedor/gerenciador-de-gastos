@@ -1,0 +1,8 @@
+[
+  {
+    "nome": "Gasto 1",
+    "valor": "200",
+    "tipo": "Fixo",
+    "categoria": "moradia"
+  }
+]

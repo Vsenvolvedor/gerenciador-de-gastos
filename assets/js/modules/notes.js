@@ -1,7 +1,9 @@
 import {modal} from "../script.js"
+import FetchItems from "./fetchItems.js"
 
 class Notes {
   constructor(wrapper,form) {
+    this.noteApi = new FetchItems('note.json')
     this.wrapper = document.querySelector(wrapper)
     this.form = document.querySelector(form)
     this.inputs = [...this.form].filter((item) => item.id === 'text' || item.id === 'title')
@@ -9,19 +11,27 @@ class Notes {
 
     this.addElement = this.addElement.bind(this)
   }
-  createElement(){
+  async addSaveNotes(){
+    const json = await this.noteApi.initFetch()
+    json.forEach((item) => {
+      const element = this.createElement(item.titulo,item.descricao)
+      this.wrapper.innerHTML += element
+    })
+    this.deletEvent()
+  }
+  createElement(title,desc){
     const element = `
     <div class="note">
         <div>
           <h3>
-            ${this.form.elements.title.value}
+            ${title}
           </h3>
           <button class="delet-note">
             <img src="assets/images/delete.svg" alt="Deletar">
           </button>
         </div>
         <p>
-          ${this.form.elements.text.value}
+          ${desc}
         </p>
     </div>
     `
@@ -37,7 +47,7 @@ class Notes {
   addElement(){
     const [input1,input2] = this.inputs.map((input) => !(input.value === ''));
     if(input1 && input2){
-      const element = this.createElement();
+      const element = this.createElement(this.form.elements.title.value,this.form.elements.text.value);
       this.wrapper.innerHTML += element;
       modal.toggleMenu()
       document.querySelector('body').style.overflowY = 'auto'
@@ -64,6 +74,7 @@ class Notes {
   }
 
   init(){
+    this.addSaveNotes()
     if(this.wrapper && this.form){this.addEventClick();this.deletEvent()}
     return this
   }

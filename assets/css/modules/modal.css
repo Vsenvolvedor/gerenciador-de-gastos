@@ -20,6 +20,7 @@
 {
   display: flex;
   justify-content: center;
+  padding: 0 3rem;
   align-items: center;
   position: absolute;
   width: 100%;
@@ -144,4 +145,30 @@
   padding: .5rem;
   margin-bottom: 1rem;
   width: 140px;
+}
+
+@media (max-width: 380px) {
+  #note,
+  #modal
+  {
+    padding: 1rem;
+  }
+
+  #note input[type="button"] {
+    margin-top: 1rem;
+  }
+
+  #modal input[type="button"] {
+    margin-top: 0;
+  }
+
+  .modal-flex {
+    margin-bottom: 1rem;
+    gap: .5rem;
+  }
+
+  .modal-g.active {
+    padding: 0 1.5rem;
+  }
+  
 }

@@ -6,7 +6,7 @@ function deletNote(index){
   const newNote = note.filter(item => item !== note[index])
   const json = JSON.stringify([...newNote])
  
-  fs.writeFileSync('./assets/api/note.json',json)
+  fs.writeFileSync('../note.json',json)
 }
 
 module.exports = {deletNote}

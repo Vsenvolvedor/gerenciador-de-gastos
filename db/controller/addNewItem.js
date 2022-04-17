@@ -23,6 +23,7 @@ function writeCost(nome,valor,tipo,categoria){
 }
 
 
+
 function writeValues(renda,despesas,sobra){
   const note = JSON.parse(fs.readFileSync('../values.json','utf8'))
 

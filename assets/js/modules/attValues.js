@@ -20,13 +20,15 @@ async function loadItems(){
     desp.innerText = json.despesas
     rest.innerText = json.sobra
   }
-  if(note && categs) {
+  if(note && noteJson.length) {
     note.innerText = noteJson[noteJson.length - 1].descricao
+  }
+
+  if(categs) {
     categs.innerHTML = categArray.map((categoria) => {
       return `<li>${categoria}: R$ ${categorias[categoria]}</li>`
     })
     categs.innerHTML = categs.innerHTML.split(',').join('')
-
   }
 }
 

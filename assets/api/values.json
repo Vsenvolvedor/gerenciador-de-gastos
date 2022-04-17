@@ -1,5 +1,5 @@
 {
-  "renda": 0,
-  "despesas": 0,
-  "sobra": 0
+  "renda": 1000,
+  "despesas": 50,
+  "sobra": 20
 }

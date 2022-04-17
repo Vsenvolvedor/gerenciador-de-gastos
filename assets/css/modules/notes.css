@@ -60,3 +60,7 @@
   text-decoration: underline var(--cor04) 2px;
 }
 
+#addNote {
+  font-size: 1.4rem;
+  color: var(--cor05);
+}

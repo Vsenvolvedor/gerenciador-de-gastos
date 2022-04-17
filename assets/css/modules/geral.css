@@ -32,6 +32,10 @@
   width: fit-content;
 }
 
+.info #rmen {
+  font-size: 2.2rem;
+}
+
 .notes{
   background-color: var(--cor04);
   padding: 6rem;

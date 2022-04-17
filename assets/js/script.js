@@ -1,4 +1,7 @@
 import Menu from './modules/menu.js'
+import { loadItems } from './modules/attValues.js'
+
+loadItems()
 
 const activeClass = 'active'
 

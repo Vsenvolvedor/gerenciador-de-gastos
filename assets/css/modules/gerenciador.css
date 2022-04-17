@@ -76,3 +76,14 @@
   margin-left: .5rem;
 }
 
+@media(max-width:470px) {
+  .info-wrapper {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btns-info {
+    margin-bottom: 3rem;
+  }
+}

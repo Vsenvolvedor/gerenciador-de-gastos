@@ -1,5 +1,7 @@
 import {modal2} from "../script.js"
 import {addItems,loadItems} from "./attValues.js"
+import FetchItems from "./fetchItems.js"
+
 let despesas = null
 
 function manager() {
@@ -8,6 +10,7 @@ function manager() {
     wrapper = document.querySelector('.g-wrapper'),
     form = [...document.querySelector('#modal')],
     itemType = document.querySelectorAll('.type'),
+    fetchItem = new FetchItems('manage.json'),
     activeClass = 'active',
     formObj = {}
     form.forEach((item) => {
@@ -33,21 +36,21 @@ function manager() {
     deletElements.forEach(element => element.addEventListener('click',deletElement))
   }
 
-  function createElement(){
+  function createElement(title,price,type,categ){
     const element = `
     <div class="note">
     <div>
       <h3>
-        ${formObj.name.value}
+        ${title}
       </h3>
       <button class="delet-note">
         <img src="assets/images/delete.svg" alt="Deletar">
       </button>
     </div>
     <ul>
-      <li>Valor: R$ <span>${formObj.price.value}</span> </li>
-      <li>Tipo: <span>${formObj.type}</span></li>
-      <li>Categoria: <span>${formObj.categ.value}</span> </li>
+      <li>Valor: R$ <span>${price}</span> </li>
+      <li>Tipo: <span>${type}</span></li>
+      <li>Categoria: <span>${categ}</span> </li>
     </ul>
     </div>
     `
@@ -78,7 +81,7 @@ function manager() {
   function addElement(){
     const validate = validateInputs()
     if(validate){
-      const element = createElement()
+      const element = createElement(formObj.name.value,formObj.price.value,formObj.type,formObj.categ.value)
       wrapper.innerHTML += element
       addDeletEvent()
       modal2.toggleMenu()
@@ -98,11 +101,21 @@ function manager() {
     }
   }
 
+  async function loadInfo() {
+    const json = await fetchItem.initFetch()
+    json.forEach(({nome,tipo,valor,categoria}) => {
+      const element = createElement(nome,valor,tipo,categoria)
+      wrapper.innerHTML += element
+    })
+    addDeletEvent()
+  }
+
   loadItems()
+  loadInfo()
 
   formObj.btn.addEventListener('click',addElement)
   itemType.forEach(item => item.addEventListener('click', (event) => {checkItem(event,itemType)}))
-  
+   
 }
 
 manager()

@@ -1,6 +1,2 @@
-const write = require('./addNewItem.js')
-const remove = require('./removeItem.js')
-
-
-
-export {write,remove}
+const {writeNote,writeCost,writeValues,writeCategs} = require('./addNewItem.js')
+const {deletNote} = require('./removeItem.js')

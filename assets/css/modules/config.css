@@ -107,3 +107,19 @@ header > h1{
   right: 0;
   cursor: pointer;
 }
+
+@media (max-width: 420px) {
+  header {
+    flex-wrap: wrap;
+    padding: 3rem 1.5rem;
+  }
+
+  header > h1 {
+    margin-bottom: 1.5rem;
+    order: 1;
+  }
+
+  .header-menu {
+    order: 2;
+  }
+}

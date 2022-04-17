@@ -1,5 +1,12 @@
 {
   "renda": 1000,
   "despesas": 50,
-  "sobra": 20
+  "sobra": 20,
+  "categorias": {
+    "moradia": 0,
+    "transporte": 0,
+    "alimentacao": 0,
+    "entreterimento": 0,
+    "outros":0
+  }
 }

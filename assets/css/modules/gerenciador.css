@@ -9,7 +9,7 @@
 }
 
 .info-g{
-  box-shadow: 0 0 0 6px var(--cor04);
+  box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.404);
   border-radius: 6px;
   padding: 1.5rem 3rem;
   font-size: 1.6rem;

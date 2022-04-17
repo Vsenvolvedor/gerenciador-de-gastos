@@ -17,12 +17,6 @@
   margin-bottom: 1.5rem;
 }
 
-.graphic-wrap{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-}
 
 .info{
   font-size: 1.8rem;
@@ -57,4 +51,20 @@
 .center{
   font-size: 2rem;
   margin: 1.2rem auto;
+}
+
+@media (max-width: 620px){
+  #geral{
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem;
+    gap: 1.5rem;
+  }
+  #geral > div {
+    margin: 0 auto;
+    grid-column: 1/3;
+  }
+
+  .notes {
+    padding: 3rem;
+  }
 }

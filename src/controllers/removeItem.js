@@ -1,13 +1,12 @@
 const fs = require('fs')
+const path = require('path')
+const dbPath = path.dirname(__dirname)
 
-function deletNote(index,url){
-  if(index && url) {
-    const note = JSON.parse(fs.readFileSync(`../${url}.json`,'utf8'))
-    const newNote = note.filter(item => item !== note[index])
-    const json = JSON.stringify([...newNote])
- 
-    fs.writeFileSync(`../${url}.json`,json)
-  }
+function deletItem(index,url){
+  const item = JSON.parse(fs.readFileSync(`${dbPath}/db/${url}.json`,'utf8'))
+  const newItem = item.filter(i => i !== item[index])
+  const json = JSON.stringify([...newItem])
+  fs.writeFileSync(`${dbPath}/db/${url}.json`,json)
 }
 
-module.exports = {deletNote}
+module.exports = {deletItem}

@@ -1,4 +1,5 @@
 const {writeNote, writeCost, writeValues, writeCategs} = require('./controllers/addNewItem')
+const {deletItem} = require('./controllers/removeItem')
 const express = require('express')
 const app = express()
 
@@ -11,11 +12,17 @@ app.get('/values', (req,res) => {
 })
 
 app.post('/values', (req,res) => {
-  const renda = req.body.renda
-  const despesas = req.body.despesas
-  const sobra = req.body.sobra
+  
+  if(req.body.renda) {
+    const renda = req.body.renda
+    const despesas = req.body.despesas
+    const sobra = req.body.sobra
+  
+    writeValues(renda,despesas,sobra)
+  } else if(req.body.categs) {
+    writeCategs(req.body.categs)
+  }
 
-  writeValues(renda,despesas,sobra)
   res.send({
     ok: true
   })
@@ -27,8 +34,7 @@ app.get('/note', (req,res) => {
 })
 
 app.post('/note', (req,res) => {
-  const titulo = req.body.titulo
-  const descricao = req.body.descricao
+  const {titulo,descricao} = req.body
   
   writeNote(titulo,descricao)
 
@@ -43,15 +49,18 @@ app.get('/manage', (req,res) => {
 })
 
 app.post('/manage', (req,res) => {
-  const nome = req.body.nome
-  const valor = req.body.valor
-  const tipo = req.body.tipo
-  const categoria = req.body.categoria
+  const {nome,valor,tipo,categoria} = req.body
   writeCost(nome,valor,tipo,categoria)
 
   res.send({
     ok: true
   })
+})
+
+app.delete('/delet', (req,res) => {
+  const {value,url} = req.body
+  
+  deletItem(value,url)
 })
 
 app.listen(5000, err => {

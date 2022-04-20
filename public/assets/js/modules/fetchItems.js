@@ -13,4 +13,13 @@ export default class FetchItems {
       },
     body: JSON.stringify(value)})
   }
+  initDelet(value) {
+    fetch('/delet',{ 
+      method:"DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({value,url:this.url})
+    })
+  }
 }

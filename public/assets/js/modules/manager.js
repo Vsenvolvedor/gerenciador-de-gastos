@@ -11,6 +11,7 @@ function manager() {
     form = [...document.querySelector('#modal')],
     itemType = document.querySelectorAll('.type'),
     fetchItem = new FetchItems('manage'),
+    fetchValue = new FetchItems('values'),
     activeClass = 'active',
     formObj = {}
     form.forEach((item) => {
@@ -28,7 +29,17 @@ function manager() {
   }
 
   function deletElement({target}){
-    target.parentElement.parentElement.parentElement.remove()
+    const elements = [...wrapper.querySelectorAll('.note')]
+    const{element,index} = elements.reduce((acc,element,index) => {
+      element.contains(target) ? acc =  {element,index} : null
+      return acc
+    },0)
+
+    if(element && (index || index === 0)) {
+      element.remove()
+      fetchItem.initDelet(index)
+    } 
+    
   }
 
   function addDeletEvent(){
@@ -84,6 +95,7 @@ function manager() {
       const element = createElement(formObj.name.value,formObj.price.value,formObj.type,formObj.categ.value)
       fetchItem.initPost({nome:formObj.name.value,valor:formObj.price.value,tipo:formObj.type,categoria:formObj.categ.value})
       wrapper.innerHTML += element
+      fetchValue.initPost({categs:{[formObj.categ.value]:+formObj.price.value}})
       addDeletEvent()
       modal2.toggleMenu()
       document.querySelector('body').style.overflowY = 'auto'

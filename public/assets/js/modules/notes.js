@@ -10,6 +10,7 @@ class Notes {
     this.btn = [...this.form].filter((item) => item.id === 'btn')[0]
   
     this.addElement = this.addElement.bind(this)
+    this.deletElement = this.deletElement.bind(this)
   }
   async addSaveNotes(){
     const json = await this.noteApi.initGet()
@@ -42,7 +43,16 @@ class Notes {
     this.addEventClick()
   }
   deletElement({target}){
-    target.parentElement.parentElement.parentElement.remove()
+    const elements = [...this.wrapper.querySelectorAll('.note')]
+    const{element,index} = elements.reduce((acc,element,index) => {
+      element.contains(target) ? acc =  {element,index} : null
+      return acc
+    },0)
+
+    if(element && (index || index === 0)) {
+      element.remove()
+      this.noteApi.initDelet(index)
+    }   
   }
   addElement(){
     const [input1,input2] = this.inputs.map((input) => !(input.value === ''));
@@ -71,7 +81,7 @@ class Notes {
   }
   addEventClick(){
     this.btn.addEventListener('click',this.addElement)
-    if(this.deletElements){this.deletElements.forEach((element)=> element.addEventListener('click',this.deletElement))}
+    if(this.deletElements){this.deletElements.forEach((element)=> element.addEventListener('click',(e) => this.deletElement(e)))}
   }
 
   init(){

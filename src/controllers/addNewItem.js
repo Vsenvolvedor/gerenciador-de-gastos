@@ -40,9 +40,9 @@ function writeCategs(categs) {
   const note = JSON.parse(fs.readFileSync(`${dbPath}/db/values.json`,'utf8'))
   const {categorias} = note
   const categArray = ['moradia','transporte','alimentacao','entreterimento','outros']
-  categArray.forEach((item, index) => {
-    if(categs[index]) {
-      categorias[item] = categs[index]
+  categArray.forEach((item) => {
+    if(categs[item]) {
+      categorias[item] = categs[item]
     }
   })
 

@@ -1,6 +1,8 @@
 const { DataController} = require('./controller/DataController');
 const express = require('express');
 const app = express();
+const url = require('url');
+const { hostname } = require('os');
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -62,10 +64,13 @@ app.delete('/delet', (req,res) => {
   });
 });
 
-app.listen(5000, err => {
+const port = 5000
+
+app.listen(port, err => {
   if(err) {
     console.log(err);
   } else {
     console.log('RODANDO');
+    console.log(`http://localhost:${port}`)
   }
 });

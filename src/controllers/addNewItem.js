@@ -29,7 +29,7 @@ function writeValues(renda,despesas,sobra){
   const note = JSON.parse(fs.readFileSync(`${dbPath}/db/values.json`,'utf8'))
 
   renda ? note.renda = renda : ''
-  despesas ? note.despesas = despesas : ''
+  despesas ? note.despesas += despesas : ''
   sobra ? note.sobra = sobra : ''
 
   const json = JSON.stringify(note)
@@ -42,7 +42,7 @@ function writeCategs(categs) {
   const categArray = ['moradia','transporte','alimentacao','entreterimento','outros']
   categArray.forEach((item) => {
     if(categs[item]) {
-      categorias[item] = categs[item]
+      categorias[item] += categs[item]
     }
   })
 

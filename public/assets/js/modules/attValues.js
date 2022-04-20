@@ -34,9 +34,9 @@ async function loadItems(){
 }
 
 function addItems(despesas){
-  apiValues.initPost({renda:+renda.value,despesas,sobra:renda.value - despesas})
-  desp.innerText = despesas
+  desp.innerText = Number(desp.innerText) + despesas
   rest.innerText = renda.value - despesas
+  apiValues.initPost({renda:+renda.value,despesas,sobra:renda.value - despesas})
 }
 
 if(renda) {

@@ -12,12 +12,10 @@ app.get('/values', (req,res) => {
 })
 
 app.post('/values', (req,res) => {
-  
-  if(req.body.renda) {
-    const renda = req.body.renda
-    const despesas = req.body.despesas
-    const sobra = req.body.sobra
-  
+ 
+  if(req.body.renda || req.body.renda === 0) {
+    const {renda,despesas,sobra} = req.body
+   
     writeValues(renda,despesas,sobra)
   } else if(req.body.categs) {
     writeCategs(req.body.categs)
@@ -59,8 +57,10 @@ app.post('/manage', (req,res) => {
 
 app.delete('/delet', (req,res) => {
   const {value,url} = req.body
-  
   deletItem(value,url)
+  res.send({
+    ok: true
+  })
 })
 
 app.listen(5000, err => {

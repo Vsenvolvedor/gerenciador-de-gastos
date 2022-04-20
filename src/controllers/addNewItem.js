@@ -25,8 +25,6 @@ function writeCost(nome,valor,tipo,categoria){
   fs.writeFileSync(`${dbPath}/db/manage.json`,json)
 }
 
-
-
 function writeValues(renda,despesas,sobra){
   const note = JSON.parse(fs.readFileSync(`${dbPath}/db/values.json`,'utf8'))
 

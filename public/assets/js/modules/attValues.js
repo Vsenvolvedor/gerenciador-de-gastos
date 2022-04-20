@@ -34,9 +34,15 @@ async function loadItems(){
 }
 
 function addItems(despesas){
+  apiValues.initPost({renda:+renda.value,despesas,sobra:renda.value - despesas})
   desp.innerText = despesas
   rest.innerText = renda.value - despesas
 }
+
+renda.addEventListener('change', async () => {
+  const json = await apiValues.initGet()
+  addItems(json.despesas)
+})
 
 export {loadItems,addItems}
 

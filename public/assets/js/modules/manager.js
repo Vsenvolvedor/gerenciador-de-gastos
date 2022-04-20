@@ -102,7 +102,7 @@ function manager() {
   }
 
   async function loadInfo() {
-    const json = await fetchItem.initFetch()
+    const json = await fetchItem.initGet()
     json.forEach(({nome,tipo,valor,categoria}) => {
       const element = createElement(nome,valor,tipo,categoria)
       wrapper.innerHTML += element

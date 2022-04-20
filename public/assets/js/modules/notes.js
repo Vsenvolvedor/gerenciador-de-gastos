@@ -1,5 +1,5 @@
 import {modal} from "../script.js"
-import FetchItems from "./fetchItems.js"
+import FetchItems from "./FetchItems.js"
 
 class Notes {
   constructor(wrapper,form) {
@@ -8,11 +8,11 @@ class Notes {
     this.form = document.querySelector(form)
     this.inputs = [...this.form].filter((item) => item.id === 'text' || item.id === 'title')
     this.btn = [...this.form].filter((item) => item.id === 'btn')[0]
-
+  
     this.addElement = this.addElement.bind(this)
   }
   async addSaveNotes(){
-    const json = await this.noteApi.initFetch()
+    const json = await this.noteApi.initGet()
     json.forEach((item) => {
       const element = this.createElement(item.titulo,item.descricao)
       this.wrapper.innerHTML += element
@@ -45,14 +45,6 @@ class Notes {
     target.parentElement.parentElement.parentElement.remove()
   }
   addElement(){
-    fetch('/getjson',{
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify({teste:'teste'})
-    })
     const [input1,input2] = this.inputs.map((input) => !(input.value === ''));
     if(input1 && input2){
       const element = this.createElement(this.form.elements.title.value,this.form.elements.text.value);

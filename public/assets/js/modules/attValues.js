@@ -1,4 +1,4 @@
-import FetchItems from './fetchItems.js'
+import FetchItems from './FetchItems.js'
 
 const 
   renda = document.querySelector('#rmen'),
@@ -11,9 +11,9 @@ const
   apiNotes = new FetchItems('note')
   
 async function loadItems(){
-  const json = await apiValues.initFetch()
+  const json = await apiValues.initGet()
   const {categorias} = json
-  const noteJson = await apiNotes.initFetch()
+  const noteJson = await apiNotes.initGet()
  
   if(renda && desp && rest) {
     renda.innerText = json.renda

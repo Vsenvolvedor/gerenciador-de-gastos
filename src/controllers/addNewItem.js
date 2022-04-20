@@ -9,7 +9,7 @@ function writeNote(titulo,descricao){
     descricao
   }])
  
-  fs.writeFileSync(`${dbPath}/db/note.json`,json)
+  fs.writeFileSync(`${dbPath}/db/note.json`,json);
 }
 
 

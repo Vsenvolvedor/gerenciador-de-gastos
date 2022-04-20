@@ -8,7 +8,7 @@ export default class Menu{
     this.activeClass = activeClass;
     this.child = child | false;
   }
-  toggleMenu(event, type = false) {
+  toggleMenu(type = false) {
     this.menu.classList.toggle('active');
     if (this.child) {
       document.querySelector('body').style.overflowY = type || 'hidden';
@@ -18,7 +18,9 @@ export default class Menu{
   }
   addEvent(){
     this.btn.addEventListener('click', this.toggleMenu);
-    this.closeMenu.forEach(item => item.addEventListener('click', event => this.toggleMenu(event, 'auto')));
+    this.closeMenu.forEach(item => item.addEventListener('click', () => {
+      this.toggleMenu('auto');
+    }));
   }
   setThis() {
     this.toggleMenu = this.toggleMenu.bind(this);

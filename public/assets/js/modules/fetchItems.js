@@ -2,8 +2,10 @@ export default class FetchItems {
   constructor(url){
     this.url = url;
   }
-  initGet() {
-    return fetch(this.url).then( r => r.json()).then(json => json);
+  async initGet() {
+    const response = await fetch(this.url);
+    const json = await response.json();
+    return json;
   }
   initPost(value) {
     fetch(this.url,{ 

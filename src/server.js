@@ -20,7 +20,7 @@ app.get('/manage', (req,res) => {
 })
 
 app.post('/note', (req,res) => {
- 
+  console.log(req.body)
 })
 
 app.listen(5000, err => {

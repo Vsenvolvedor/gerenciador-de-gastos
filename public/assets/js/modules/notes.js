@@ -55,6 +55,7 @@ class Notes {
       this.inputs.forEach((input) => {
         input.value = ''    
       })
+      this.noteApi.initPost(element)
     } else {
       this.inputs.forEach((input) => {
         if(input.value === ''){

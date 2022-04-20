@@ -21,12 +21,11 @@ app.get('/manage', (req,res) => {
   res.sendFile('./db/manage.json',{root:__dirname})
 })
 
-app.post('/note', (req,res) => {
+app.post('/manage', (req,res) => {
   const nome = req.body.nome
   const valor = req.body.valor
   const tipo = req.body.tipo
   const categoria = req.body.categoria
-
   writeCost(nome,valor,tipo,categoria)
 
   res.send({

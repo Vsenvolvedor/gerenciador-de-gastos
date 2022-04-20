@@ -66,13 +66,13 @@ class Notes {
       const element = this.createElement(title.value,text.value);
       // Adicionar ao DOM
       this.wrapper.innerHTML += element;
-      // Limpar inputs
-      this.inputs.forEach(( {value} ) => value = '');
       // Fechar modal e ativar scroll
       modal.toggleMenu();
       document.querySelector('body').style.overflowY = 'auto';
       // Enviar elemento para o server 
       this.initFetchs(title,text);
+      // Limpar inputs
+      this.inputs.forEach((input) => input.value = '');
       // Adicionar evento de deletar
       this.deletEvent();
     } else {

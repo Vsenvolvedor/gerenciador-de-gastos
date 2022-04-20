@@ -1,4 +1,4 @@
-const { DataController} = require('./controller/DataController');
+const { DataController } = require('./controller/DataController');
 const express = require('express');
 const app = express();
 const url = require('url');

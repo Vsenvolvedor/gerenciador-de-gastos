@@ -2,8 +2,6 @@ import {modal2} from "../script.js";
 import {addItems,loadItems} from "./attValues.js";
 import FetchItems from "./fetchItems.js";
 
-let despesas = null;
-
 class Manager {
   constructor() {
     this.wrapper = document.querySelector('.g-wrapper');
@@ -16,6 +14,7 @@ class Manager {
     });
     this.fetchItem = new FetchItems('manage');
     this.fetchValue = new FetchItems('values');
+    this.despesas = null
   }
   checkItem( {target} , items){
     items.forEach((item) => item.classList.remove(this.activeClass));
@@ -96,8 +95,9 @@ class Manager {
   initFetchs(name,price,type,categ) {
     this.fetchItem.initPost({nome:name.value,valor:price.value,tipo:type,categoria:categ.value});
     this.fetchValue.initPost({categs:{[categ.value]:+price.value}});
-    addItems(despesas);
-    despesas = 0;
+    this.despesas = +price.value;
+    addItems(this.despesas);
+    this.despesas = 0;
   }
 
   addElement(){
@@ -112,16 +112,16 @@ class Manager {
       document.querySelector('body').style.overflowY = 'auto';
       // Adiciona evento de deletar
       this.addDeletEvent();
+      // Envia os dados ao servidor
+      this.initFetchs(name,price,type,categ);
       // Limpa os inputs
       this.form.filter(item => item.name !== 'btn').forEach((item) => {
-        item.name === 'price' ? despesas += +item.value :'';
+        item.name === 'price' ? this.despesas += +item.value :'';
         item.value = '';
         item.style.border = '';
         item.name === 'type' ? item.labels[0].classList.remove(this.activeClass) : '';
       });
-      // Envia os dados ao servidor
-      this.initFetchs(name,price,type,categ);
-   
+  
     } else {
       this.form.forEach((input) => {
         input.value === '' ? input.style.border = '2px solid #D25555': ''

@@ -1,0 +1,23 @@
+{
+  "name": "gerenciador-de-gastos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viteydev/gerenciador-de-gastos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viteydev/gerenciador-de-gastos/issues"
+  },
+  "homepage": "https://github.com/viteydev/gerenciador-de-gastos#readme"
+}

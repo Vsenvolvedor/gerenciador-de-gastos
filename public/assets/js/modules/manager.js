@@ -10,7 +10,7 @@ function manager() {
     wrapper = document.querySelector('.g-wrapper'),
     form = [...document.querySelector('#modal')],
     itemType = document.querySelectorAll('.type'),
-    fetchItem = new FetchItems('manage.json'),
+    fetchItem = new FetchItems('manage'),
     activeClass = 'active',
     formObj = {}
     form.forEach((item) => {

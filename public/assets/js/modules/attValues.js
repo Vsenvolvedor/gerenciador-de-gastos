@@ -7,13 +7,14 @@ const
   note = document.querySelector('#addNote'),
   categs = document.querySelector('.categorias'),
   categArray = ['moradia','transporte','alimentacao','entreterimento','outros'],
-  apiValues = new FetchItems('values.json'),
-  apiNotes = new FetchItems('note.json')
+  apiValues = new FetchItems('values'),
+  apiNotes = new FetchItems('note')
   
 async function loadItems(){
   const json = await apiValues.initFetch()
   const {categorias} = json
   const noteJson = await apiNotes.initFetch()
+ 
   if(renda && desp && rest) {
     renda.innerText = json.renda
     renda.value = json.renda

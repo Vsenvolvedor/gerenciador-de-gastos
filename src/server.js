@@ -19,8 +19,10 @@ app.get('/manage', (req,res) => {
   res.sendFile('./db/manage.json',{root:__dirname})
 })
 
-app.post('/note', (req,res) => {
-  console.log(req.body)
+app.post('/notes', (req,res) => {
+  const body = req.body
+  console.log(body)
+  
 })
 
 app.listen(5000, err => {

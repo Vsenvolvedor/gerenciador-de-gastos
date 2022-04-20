@@ -3,10 +3,10 @@ export default class FetchItems {
     this.url = url
     this.options = {
       method:"POST",
+      body: JSON.stringify({teste:'teste'}),
       headers: {
         "Content-Type": "application/json"
-      },
-      body: JSON.stringify(this.value)
+      }
     }
   }
   initGet() {
@@ -14,8 +14,8 @@ export default class FetchItems {
   }
   initPost(value) {
     this.value = value
-    fetch(this.url,this.options)
-    .then(response => response.json())
+    fetch('/notes',this.options)
+    .then(response => {console.log(response); return response.json()})
     .then((data) => console.log('Sucesso', data))
     .catch((data) => {
       console.log('erro', data)

@@ -82,6 +82,7 @@ function manager() {
     const validate = validateInputs()
     if(validate){
       const element = createElement(formObj.name.value,formObj.price.value,formObj.type,formObj.categ.value)
+      fetchItem.initPost({nome:formObj.name.value,preco:formObj.price.value,tipo:formObj.type,categoria:formObj.categ.value})
       wrapper.innerHTML += element
       addDeletEvent()
       modal2.toggleMenu()

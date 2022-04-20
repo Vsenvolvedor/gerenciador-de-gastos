@@ -1,17 +1,20 @@
 const fs = require('fs')
+const path = require('path')
+const dbPath = path.dirname(__dirname)
 
 function writeNote(titulo,descricao){
-  const note = JSON.parse(fs.readFileSync('../note.json','utf8'))
+  const note = JSON.parse(fs.readFileSync(`${dbPath}/db/note.json`,'utf8'))
   const json = JSON.stringify([...note,{
     titulo,
     descricao
   }])
  
-  fs.writeFileSync('../note.json',json)
+  fs.writeFileSync(`${dbPath}/db/note.json`,json)
 }
 
+
 function writeCost(nome,valor,tipo,categoria){
-  const note = JSON.parse(fs.readFileSync('../manage.json','utf8'))
+  const note = JSON.parse(fs.readFileSync(`${dbPath}/db/manage.json`,'utf8'))
   const json = JSON.stringify([...note,{
     nome,
     valor,
@@ -19,24 +22,24 @@ function writeCost(nome,valor,tipo,categoria){
     categoria
   }])
  
-  fs.writeFileSync('../manage.json',json)
+  fs.writeFileSync(`${dbPath}/db/manage.json`,json)
 }
 
 
 
 function writeValues(renda,despesas,sobra){
-  const note = JSON.parse(fs.readFileSync('../values.json','utf8'))
+  const note = JSON.parse(fs.readFileSync(`${dbPath}/db/values.json`,'utf8'))
 
   renda ? note.renda = renda : ''
   despesas ? note.despesas = despesas : ''
   sobra ? note.sobra = sobra : ''
 
   const json = JSON.stringify(note)
-  fs.writeFileSync('../values.json',json)
+  fs.writeFileSync(`${dbPath}/db/values.json`,json)
 }
 
 function writeCategs(categs) {
-  const note = JSON.parse(fs.readFileSync('../values.json','utf8'))
+  const note = JSON.parse(fs.readFileSync(`${dbPath}/db/values.json`,'utf8'))
   const {categorias} = note
   const categArray = ['moradia','transporte','alimentacao','entreterimento','outros']
   categArray.forEach((item, index) => {
@@ -47,7 +50,7 @@ function writeCategs(categs) {
 
   note.categorias = categorias
   const json = JSON.stringify(note)
-  fs.writeFileSync('../values.json',json)
+  fs.writeFileSync(`${dbPath}/db/values.json`,json)
 }
 
 

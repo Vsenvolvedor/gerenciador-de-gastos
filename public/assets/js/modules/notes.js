@@ -8,11 +8,7 @@ class Notes {
     this.form = document.querySelector(form)
     this.inputs = [...this.form].filter((item) => item.id === 'text' || item.id === 'title')
     this.btn = [...this.form].filter((item) => item.id === 'btn')[0]
-    this.options = {
-      method: "POST",
-      body: JSON.stringify({teste:'teste'})
-    }
-
+  
     this.addElement = this.addElement.bind(this)
   }
   async addSaveNotes(){
@@ -50,9 +46,9 @@ class Notes {
   }
   addElement(){
     const [input1,input2] = this.inputs.map((input) => !(input.value === ''));
-    fetch('/notes',this.options)
     if(input1 && input2){
       const element = this.createElement(this.form.elements.title.value,this.form.elements.text.value);
+      this.noteApi.initPost({titulo:this.form.elements.title.value,descricao:this.form.elements.text.value})
       this.wrapper.innerHTML += element;
       modal.toggleMenu()
       document.querySelector('body').style.overflowY = 'auto'
@@ -81,6 +77,7 @@ class Notes {
   init(){
     this.addSaveNotes()
     if(this.wrapper && this.form){this.addEventClick();this.deletEvent()}
+ 
     return this
   }
 }

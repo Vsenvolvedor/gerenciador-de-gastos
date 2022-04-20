@@ -28,7 +28,7 @@ function writeCost(nome,valor,tipo,categoria){
 function writeValues(renda,despesas,sobra){
   const note = JSON.parse(fs.readFileSync(`${dbPath}/db/values.json`,'utf8'))
 
-  renda ? note.renda = renda : ''
+  renda || renda === 0 ? note.renda = renda : ''
   despesas ? note.despesas += despesas : ''
   sobra ? note.sobra = sobra : ''
 

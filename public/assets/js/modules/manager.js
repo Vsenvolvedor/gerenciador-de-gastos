@@ -30,14 +30,20 @@ function manager() {
 
   function deletElement({target}){
     const elements = [...wrapper.querySelectorAll('.note')]
-    const{element,index} = elements.reduce((acc,element,index) => {
-      element.contains(target) ? acc =  {element,index} : null
+    const{element,price,categ,index} = elements.reduce((acc,element,index) => {
+      const price = element.querySelector('#price')
+      const categ = element.querySelector('#catego')
+      element.contains(target) ? acc =  {element,price:+price.innerText,categ:categ.innerText,index} : null
       return acc
     },0)
 
     if(element && (index || index === 0)) {
       element.remove()
+      addItems(-price)
       fetchItem.initDelet(index)
+      fetchValue.initPost({categs:{[categ]:-price}})
+      addItems(false)
+      loadItems()
     } 
     
   }
@@ -59,9 +65,9 @@ function manager() {
       </button>
     </div>
     <ul>
-      <li>Valor: R$ <span>${price}</span> </li>
+      <li>Valor: R$ <span id="price">${price}</span> </li>
       <li>Tipo: <span>${type}</span></li>
-      <li>Categoria: <span>${categ}</span> </li>
+      <li>Categoria: <span id="catego">${categ}</span> </li>
     </ul>
     </div>
     `
@@ -106,6 +112,7 @@ function manager() {
         item.name === 'type' ? item.labels[0].classList.remove(activeClass) : ''
       })
       addItems(despesas)
+      despesas = 0
     } else {
       form.forEach((input) => {
         input.value === '' ? input.style.border = '2px solid #D25555':''

@@ -15,7 +15,6 @@ app.post('/values', (req,res) => {
  
   if(req.body.renda || req.body.renda === 0) {
     const {renda,despesas,sobra} = req.body
-   
     writeValues(renda,despesas,sobra)
   } else if(req.body.categs) {
     writeCategs(req.body.categs)

@@ -19,7 +19,7 @@ async function loadItems(){
     renda.innerText = json.renda
     renda.value = json.renda
     desp.innerText = json.despesas
-    rest.innerText = json.sobra
+    rest.innerText = json.renda - json.despesas
   }
   if(note && noteJson.length) {
     note.innerText = noteJson[noteJson.length - 1].descricao
@@ -33,16 +33,22 @@ async function loadItems(){
   }
 }
 
-function addItems(despesas){
-  desp.innerText = Number(desp.innerText) + despesas
+function addItems(value){
+  const despesas = value || value < 0 ? value : false
+  despesas ? desp.innerText = Number(desp.innerText) + despesas : null
   rest.innerText = renda.value - despesas
-  apiValues.initPost({renda:+renda.value,despesas,sobra:renda.value - despesas})
+  if(desp.innerText === 0 && renda.value === 0) {
+    apiValues.initPost({renda:+renda.value,despesas,sobra:0})
+  } else {
+    apiValues.initPost({renda:+renda.value,despesas,sobra:renda.value - despesas})
+  }
 }
 
 if(renda) {
   renda.addEventListener('change', async () => {
     const json = await apiValues.initGet()
-    addItems(json.despesas)
+    addItems(false)
+    loadItems()
   })
 }
 

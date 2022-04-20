@@ -54,7 +54,7 @@ class Notes {
       this.noteApi.initDelet(index);
     }   
   }
-  initFetchs() {
+  initFetchs(title,text) {
     this.noteApi.initPost({titulo:title.value,descricao:text.value});
   }
   addElement(){
@@ -72,7 +72,7 @@ class Notes {
       modal.toggleMenu();
       document.querySelector('body').style.overflowY = 'auto';
       // Enviar elemento para o server 
-      this.initFetchs();
+      this.initFetchs(title,text);
       // Adicionar evento de deletar
       this.deletEvent();
     } else {

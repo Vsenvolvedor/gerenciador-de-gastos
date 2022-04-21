@@ -72,10 +72,9 @@ $ git clone <https://github.com/viteydev/gerenciador-de-gastos>
 $ cd gerenciador-de-gastos
 
 #Assim que estiver na pasta, adicione o seguinte comando
+#Dessa forma as dependencias da aplicação serão baixadas e o projeto podera funcionar corretamente.
 
 $ npm install
-
-#Dessa forma as dependencias da aplicação serão baixadas e o projeto podera funcionar corretamente.
 
 #Agora basta iniciar o projeto
 

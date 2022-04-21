@@ -34,7 +34,7 @@ Para a construção do projeto utilizei as seguintes tecnologias:
   </ul>
 
 ## Pagina home
-<img src='./github/home.png'/>
+<img src='./github/home.PNG'/>
 <hr/>
 
 ## Pagina gastos

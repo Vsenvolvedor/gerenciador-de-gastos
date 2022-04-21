@@ -33,15 +33,15 @@ Para a construção do projeto utilizei as seguintes tecnologias:
   </ul>
 
 ## Pagina home
-<img src='./github/home.PNG'/>
+<img align='center' src='./github/home.PNG'/>
 <hr/>
 
 ## Pagina gastos
-<img src='./github/gastos.PNG'/>
+<img align='center' src='./github/gastos.PNG'/>
 <hr/>
 
 ## Pagina anotações
-<img src='./github/anotacoes.PNG'/>
+<img align='center' src='./github/anotacoes.PNG'/>
 <hr/>
 
 ## Funcionalidades
@@ -50,7 +50,7 @@ Para a construção do projeto utilizei as seguintes tecnologias:
   - [X]Tela inicial com resumo das informações
   - [X]Adicionar o valor do gasto
   - [X]Adicionar o tipo do gasto(fixo/variavel)
-  - [X]Escolha de categorias de gasto
+  - [X]Diferentes categorias de gasto
   - [X]Adicionar anotações
   - [X]Apagar todos os dados
   - [X]Responsivo

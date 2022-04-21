@@ -38,11 +38,11 @@ Para a construção do projeto utilizei as seguintes tecnologias:
 <hr/>
 
 ## Pagina gastos
-<img src='./github/gastos.png'/>
+<img src='./github/gastos.PNG'/>
 <hr/>
 
 ## Pagina anotações
-<img src='./github/anotacoes.png'/>
+<img src='./github/anotacoes.PNG'/>
 <hr/>
 
 ## Funcionalidades

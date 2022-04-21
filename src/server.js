@@ -64,6 +64,14 @@ app.delete('/delet', (req,res) => {
   });
 });
 
+app.delete('/clean', (req,res) => {
+  DataController.resetItems()
+  res.send({
+    ok: true
+  });
+});
+
+
 const port = 5000
 
 app.listen(port, err => {

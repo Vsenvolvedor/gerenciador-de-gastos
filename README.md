@@ -1,10 +1,9 @@
 <h1 align='center'>Gerenciador de gastos </h1>
-<p align='center'>
+<h3 align='center'>
   <a href="#tecnologias">Tecnologias</a> |
   <a href="#sobre">Sobre</a> |
   <a href="#pre-requisitos">Pré-requisitos</a> 
-</p>
-<hr>
+</h3>
 
 # Tecnologias
 Para a construção do projeto utilizei as seguintes tecnologias:
@@ -34,15 +33,15 @@ Para a construção do projeto utilizei as seguintes tecnologias:
   </ul>
 
 ## Pagina home
-<img src='./github/home.png'/>
+<img src='./github/home.PNG'/>
 <hr/>
 
 ## Pagina gastos
-<img src='./github/gastos.png'/>
+<img src='./github/gastos.PNG'/>
 <hr/>
 
 ## Pagina anotações
-<img src='./github/anotacoes.png'/>
+<img src='./github/anotacoes.PNG'/>
 <hr/>
 
 ## Funcionalidades

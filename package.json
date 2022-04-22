@@ -1,8 +1,8 @@
 {
   "name": "gerenciador-de-gastos",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Gerenciador para auxiliar no controle de gastos.",
+  "main": "index.html",
   "dependencies": {
     "express": "^4.17.3"
   },

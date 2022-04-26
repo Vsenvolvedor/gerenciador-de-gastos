@@ -60,7 +60,7 @@ Para a construção do projeto utilizei as seguintes tecnologias:
 # Pre-requisitos
 
 Para testar o projeto na sua maquina você irá precisar das seguintes ferramentas:
-[Git](https://git-scm.com/), [NodeJS](https://nodejs.org/en/). Além disso é ideal usar um bom editor para trabalhar com código como o [VSCode](https://code.visualstudio.com/)
+[Git](https://git-scm.com/), [Node](https://nodejs.org/en/). Além disso é ideal usar um bom editor para trabalhar com código como o [VSCode](https://code.visualstudio.com/)
 
 ```bash
 #Clone este repositorio
